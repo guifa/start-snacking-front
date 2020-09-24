@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header text-center">Lanche</div>
+    <div class="card-body">
+        <h5 class="card-title">Total: R{{calculateTotalPrice() | currency}}</h5>
+        <hr>
+        <h6 class="card-title">Ingredientes:</h6>
+
+        <app-snack-ingredient *ngFor="let snackIngredient of snackIngredients" [snackIngredient]="snackIngredient" (ingredientRemoved)="removeFromSnack($event)"></app-snack-ingredient>
+        <br>
+        <button class="btn btn-light btn-block" (click)="snackCheckout()"
+                [disabled]="snackIngredients.length == 0">Finalizar Pedido
+        </button>
+    </div>
+  </div>
+</div>
