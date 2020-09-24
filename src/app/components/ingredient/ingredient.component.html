@@ -1,0 +1,16 @@
+<div class="card text-center">
+  <div class="card-header">
+      <h4>{{snackIngredient.ingredient.name}}</h4>
+  </div>
+  <div class="card-body">
+      <img class="card-img-top img-thumbnail" src="http://placehold.it/200x70" alt="">
+      <h5 class="card-title">R${{snackIngredient.ingredient.price}}</h5>
+      <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="addToSnack(snackIngredient)">
+              Adicionar ao Lanche
+            </button>
+          </div>
+      </div>
+  </div>
+</div>
