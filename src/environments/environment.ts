@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: '/localhost-proxy'
+  apiUrl: 'localhost:8080'
 };
 
 /*
