@@ -16,10 +16,16 @@ export class SnackComponent {
 
   @Output() ingredientRemoved = new EventEmitter();
 
+  snackToBuy = new Snack();
+
+  totalPrice: number;
+
+  displayModal: boolean;
+
   constructor(private snackService: SnackService) { }
 
   calculateTotalPrice(): number {
-    return this.snackIngredients.reduce(
+    return this.totalPrice =  this.snackIngredients.reduce(
       (acc, snackIngredient) => acc += snackIngredient.ingredient.price * snackIngredient.quantity, 0
     );
   }
@@ -28,15 +34,21 @@ export class SnackComponent {
     this.ingredientRemoved.emit(snackIngredient);
   }
 
-  snackCheckout(): void {
+  chooseSnack(): void {
     this.snackService.saveSnack(new Snack('Lanche Personalizado', this.snackIngredients)).subscribe({
       next: snack => {
-        console.log(snack);
+        this.snackToBuy = snack;
+        this.displayModal = true;
       },
       error: err => {
         console.log(err);
       }
     });
+  }
+
+  snackCheckout(): void {
+    this.displayModal = false;
+    this.snackIngredients = [];
   }
 
 

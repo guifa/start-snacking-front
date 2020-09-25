@@ -9,6 +9,9 @@ import { IngredientListComponent } from './components/ingredient-list/ingredient
 import { IngredientComponent } from './components/ingredient/ingredient.component';
 import { SnackIngredientComponent } from './components/snack-ingredient/snack-ingredient.component';
 import { SnackComponent } from './components/snack/snack.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { SnackComponent } from './components/snack/snack.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DialogModule,
+    ButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
