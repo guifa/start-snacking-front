@@ -5,7 +5,7 @@ export class Snack {
   snackIngredients: SnackIngredient[];
   totalPrice: number;
 
-  constructor(name: string, snackIngredients: SnackIngredient[]) {
+  constructor(name?: string, snackIngredients?: SnackIngredient[]) {
     this.name = name;
     this.snackIngredients = snackIngredients;
   }
