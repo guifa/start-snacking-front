@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Ingredient } from 'src/app/models/ingredient.model';
-
-const ingredientsUrl = '/proxy/ingredients';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IngredientService {
 
-  constructor(private http: HttpClient) { }
+  private ingredientsUrl: string;
+
+  constructor(private http: HttpClient) {
+    this.ingredientsUrl = `${environment.apiUrl}/ingredients`;
+  }
 
   getIngredients(): Observable<Ingredient[]> {
-    return this.http.get<Ingredient[]>(ingredientsUrl);
+    return this.http.get<Ingredient[]>(this.ingredientsUrl);
   }
 }

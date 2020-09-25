@@ -65,7 +65,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "start-snacking-front:build"
+            "browserTarget": "start-snacking-front:build",
+            "proxyConfig": "./proxy-config.json"
           },
           "configurations": {
             "production": {
