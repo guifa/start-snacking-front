@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: '/production-proxy'
+  apiUrl: 'https://start-snacking-api.herokuapp.com'
 };
