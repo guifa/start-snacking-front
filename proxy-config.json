@@ -1,6 +1,6 @@
 {
   "/proxy": {
-    "target": "http://localhost:8080",
+    "target": "https://start-snacking-api.herokuapp.com",
     "secure": false,
     "pathRewrite": {
       "^/proxy": ""
